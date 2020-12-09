@@ -2,7 +2,7 @@ pipeline {
     agent {dockerfile true}
     stages{
         stage ('Example') {
-            step{
+            steps{
                 echo 'test'
             }
 
