@@ -3,13 +3,9 @@ pipeline {
     stages{
         stage ('Example') {
             steps{
-                script{
 
                     sh whoami
                     echo "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-
-
-                }
             }
 
         }
