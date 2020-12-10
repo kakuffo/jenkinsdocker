@@ -1,12 +1,9 @@
 pipeline {
-    agent {dockerfile true}
+    agents {dockerfile true}
     stages{
         stage ('Example') {
             steps{
                     echo "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-            }
-            steps{
-                sh ls
             }
 
         }
