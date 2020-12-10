@@ -5,7 +5,7 @@ pipeline {
         stage ('Example') {
             steps{
 
-                    echo "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+                    sh "ls"
             }
 
         }
