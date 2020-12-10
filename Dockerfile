@@ -8,4 +8,3 @@ RUN mkdir /home/notify/
 RUN cd /home/notify
 RUN git clone https://github.com/kakuffo/jenkinsdocker/tree/master
 
-RUN ls
