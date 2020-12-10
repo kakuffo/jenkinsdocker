@@ -3,6 +3,7 @@ pipeline {
     stages{
         stage ('Example') {
             steps{
+                #!/bin/bash -v
                     echo "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
             }
 
