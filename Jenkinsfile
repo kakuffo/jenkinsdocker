@@ -5,6 +5,9 @@ pipeline {
             steps{
                     echo "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
             }
+            steps{
+                sh ls
+            }
 
         }
 
