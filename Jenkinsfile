@@ -1,9 +1,9 @@
 #!/bin/bash -v
 pipeline {
-    agent{dockerfile true}
-    stages{
+    agent {dockerfile true}
+    stages {
         stage ('Example') {
-            steps{
+            steps {
 
                   echo 'Hi Kwame'
             }
