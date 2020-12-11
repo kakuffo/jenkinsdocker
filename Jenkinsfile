@@ -2,9 +2,7 @@
 
 pipeline {
     // Assign to docker slave(s) label, could also be 'any'
-    agent {
-        label any
-    }
+    agent any
 
     stages {
         stage('Docker node test') {
