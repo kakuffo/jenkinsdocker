@@ -5,7 +5,7 @@ pipeline {
         stage ('Example') {
             steps{
 
-                    sh 'ls'
+                  echo 'Hi Kwame'
             }
 
         }
