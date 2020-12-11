@@ -1,6 +1,6 @@
 #!/bin/bash -v
 pipeline {
-    agent{Dockerfile true}
+    agent{dockerfile true}
     stages{
         stage ('Example') {
             steps{
