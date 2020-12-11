@@ -1,6 +1,17 @@
-FROM python:3
-RUN apt-get update && apt-get install -y \
-    apt-get install php5-mcrypt
-#RUN pip install requirement.txt
-#RUN git clone 'https://github.com/kakuffo/jenkinsdocker/tree/master'
-RUN ls
+# set base image (host OS)
+FROM python:3.8
+
+# set the working directory in the container
+WORKDIR /code
+
+# copy the dependencies file to the working directory
+COPY requirements.txt .
+
+# install dependencies
+RUN pip install -r requirements.txt
+
+# copy the content of the local src directory to the working directory
+COPY src/ .
+
+# command to run on container start
+CMD [ "python", "./server.py" ]
