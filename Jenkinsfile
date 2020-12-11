@@ -1,22 +1,14 @@
-// Jenkinsfile
-
 pipeline {
-    // Assign to docker slave(s) label, could also be 'any'
-    agent any
-
+    agent {dockerfile true}
     stages {
-        stage('Docker node test') {
-            agent {
-                docker {
-                    // Set both label and image
-                    image 'node:7-alpine'
-                    args '--name docker-node' // list any args
-                }
-            }
+        stage ('Example') {
             steps {
-                // Steps run in node:7-alpine docker container on docker slave
-                sh 'node --version'
+
+                  echo 'Hi Kwame'
             }
+
         }
+
     }
-} 
+
+}
