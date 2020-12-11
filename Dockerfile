@@ -1,6 +1,9 @@
 FROM python:3
-WORKDIR /usr/src/app
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-CMD [ "python", "./your-daemon-or-script.py" ]
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+
+RUN mkdir /home/notify/
+RUN cd /home/notify
+RUN git clone: 'bcp/AXL-767_MyBranch',userRemoteConfigs: [[url: 'http://zra-rhodecode.dps.local/TeamsNotifier'],[credentialsId: 'JenkinsOnRhodecode']]
+RUN pip3 install git
