@@ -9,6 +9,8 @@ VOLUME ["TeamsNotifier/", "/Users/kwame/Documents/workspace/domino/documents"]
 WORKDIR TeamsNotifier
 CMD ls
 ENTRYPOINT exec top -b
+ENTRYPOINT['/TeamsNotifier/sendJenkinsCommand.sh']
+CMD['sh sendJenkinsCommand.sh']
 #CMD['\
 #--webhook-url ${WebhookURL} \
 #--branch-name '${UPSTREAM_DISPLAY_NAME}' \
