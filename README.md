@@ -97,7 +97,7 @@ LABEL "Domino"=TeamsNotifier-bcp/AXL767
 EXPOSE 80/tcp
 EXPOSE 80/udp
 
-RUN git clone --branch bcp/AXL-767_MyBranch http://kwame.akuffo:zkV7bU5i6YHd37j@azra-rhodecode.dps.local/TeamsNotifier
+RUN git clone --branch bcp/AXL-767_MyBranch http://<>/TeamsNotifier
 WORKDIR /TeamsNotifier
 ENTRYPOINT exec top -b
 CMD['\
