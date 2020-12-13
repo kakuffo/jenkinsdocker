@@ -1,0 +1,15 @@
+from jenkinsapi.jenkins import Jenkins
+
+
+jenkins = Jenkins('http://localhost:8080')
+
+job_name = 'test'
+
+job = jenkins[job_name]
+
+print
+['Last build number was: ', job_name.get_number()]
+print
+['Last build result was: ', job_name.get_status()]
+print
+['Last build based on branch ', job_name.get_revision_branch()]
