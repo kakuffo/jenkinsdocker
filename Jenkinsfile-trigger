@@ -1,0 +1,50 @@
+pipeline 
+{
+    agent 
+    {
+        node 
+        {
+            label 'python-small'
+        }
+    }
+
+    parameters 
+    {
+        booleanParam(name: 'buildResult', defaultValue: true, description: 'set to true if this build should appear to succeed or false if it should appear failed')
+    }
+
+    stages 
+    {
+        stage('Set status')
+        {
+            steps
+            {
+                script 
+                {
+                    if(params.buildResult)
+                    {
+                        sh 'exit 0'
+                    } 
+                    else 
+                    {
+                        sh 'exit 1'
+                    }
+                }
+            }
+        }
+	}
+    post
+    {
+        always
+        {
+            build job: '/ZZJenkins/Integration_Test/Teams Messenger/master', wait:false, parameters: 
+            [
+            [
+                $class: 'StringParameterValue', name: 'WebhookURL', value: "https://outlook.office.com/webhook/15c880ac-0b93-40ea-9fca-e1de761c1162@57ad0b87-a463-4ff8-9496-e198bc92f64c/IncomingWebhook/6b3bd38707ef4809bc6a5e788267203e/c1448f8c-abec-4f16-b71f-593fe48cd2a0" 
+            ]
+            ]
+        }
+    }
+}
+
+

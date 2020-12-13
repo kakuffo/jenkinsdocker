@@ -1,0 +1,39 @@
+{
+  "@type": "MessageCard",
+  "@context": "http://schema.org/extensions",
+  "themeColor": "0076D7",
+  "summary": "MST Jenkins Integrated Notification - Domino",
+  "sections": [
+    {
+      "activityTitle": "Jenkins Build Completed",
+      "activitySubtitle": "",
+      "facts": [
+        {
+          "name": "id:",
+          "value": ""
+        },        {
+          "name": "author:",
+          "value": ""
+        },        {
+          "name": "msg:",
+          "value": ""
+        },
+        {
+          "name": "Status:",
+          "value": ""
+        },
+        {
+          "name": "Console:",
+          "value": ""
+        }
+      ],
+      "markdown": true
+    },
+    {
+      "activityTitle": "Changes in this build",
+      "text": ""
+    }
+  ]
+}
+
+

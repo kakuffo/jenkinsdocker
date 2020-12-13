@@ -1,1 +1,9 @@
-git==2.28.0
+jenkins-external>=0.2
+python-jenkins>=1.7.0
+jenkins-autojobs>=0.17.4
+jenkins-rapid>=0.3.10
+jenkins-cli>=0.2.0
+jenkins-cli-tool>=5.2
+Office365-REST-Python-Client>=2.3.0.1
+Office365Api-27>=0.0.7
+python-jenkins>=1.7.0

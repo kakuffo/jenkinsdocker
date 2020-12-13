@@ -1,0 +1,34 @@
+#ssh-keyscan - ssh-keyscan is a utility to get the public ssh host keys
+# python:3.9-alpine https://hub.docker.com/_/python
+# openssh https://www.openssh.com is the premier connectivity tool for remote login with the SSH protocol.
+
+FROM python:3.9-alpine as base
+
+LABEL stage=notify
+
+# Take an SSH key as a build argument.
+ARG SSH_PRIVATE_KEY
+
+# Install dependencies required to git clone.
+RUN apk update && \
+    apk add --update git && \
+    apk add --update openssh
+
+# 1. Run mkdir to create /root/.shh
+# 2. Write out SSH_KEY into id_rsa
+# 3. Change permission of .ssh
+# 4. Add azra-rhodecode to our list of known hosts for ssh.
+RUN mkdir -p /root/.ssh/ && \
+    echo "$SSH_KEY" > /root/.ssh/id_rsa && \
+    chmod -R 600 /root/.ssh/ && \
+    ssh-keyscan -t rsa azra-rhodecode >> ~/.ssh/known_hosts
+
+# Clone a repository http://azra-rhodecode/TeamsNotifier/files/master/
+
+RUN git clone http://azra-rhodecode/TeamsNotifier/files/master/
+# Choose the base image for our final image
+FROM alpine
+
+# Copy across the files from our `notify` container
+RUN mkdir files
+COPY --from=notify /../README.md /files/README.md
